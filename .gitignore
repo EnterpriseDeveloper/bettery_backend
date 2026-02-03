@@ -1,0 +1,10 @@
+# dependencies
+/node_modules
+/keys
+/build/*
+/.vscode
+/archive
+bettery-app.zip
+/.env
+
+/package-lock.json

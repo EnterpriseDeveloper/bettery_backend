@@ -1,0 +1,918 @@
+[
+    {
+        "_id": "_collection",
+        "name": "users"
+    },
+    {
+        "_id": "_collection",
+        "name": "mint"
+    },
+    {
+        "_id": "_collection",
+        "name": "publicActivites"
+    },
+    {
+        "_id": "_collection",
+        "name": "privateActivites"
+    },
+    {
+        "_id": "_collection",
+        "name": "historyTransactions"
+    },
+    {
+        "_id": "_collection",
+        "name": "publicEvents"
+    },
+    {
+        "_id": "_collection",
+        "name": "privateEvents"
+    },
+    {
+        "_id": "_collection",
+        "name": "hashtags"
+    },
+    {
+        "_id": "_collection",
+        "name": "withdrawal"
+    },
+    {
+        "_id": "_collection",
+        "name": "comments"
+    },
+    {
+        "_id": "_collection",
+        "name": "commentsIconActivites"
+    },
+    {
+        "_id": "_collection",
+        "name": "room"
+    },
+    {
+        "_id": "_collection",
+        "name": "joinRoom"
+    },
+    {
+        "_id": "_collection",
+        "name": "notificationFromRoom"
+    },
+    {
+        "_id": "_collection",
+        "name": "emailSubscribe"
+    },
+    {
+        "_id": "_collection",
+        "name": "configuration"
+    },
+    {
+        "_id": "_predicate",
+        "name": "configuration/nonce",
+        "type": "int"
+    },
+    {
+        "_id": "_predicate",
+        "name": "emailSubscribe/email",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "notificationFromRoom/read",
+        "type": "boolean"
+    },
+    {
+        "_id": "_predicate",
+        "name": "notificationFromRoom/date",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "notificationFromRoom/userId",
+        "type": "ref",
+        "restrictCollection": "users"
+    },
+    {
+        "_id": "_predicate",
+        "name": "notificationFromRoom/publicEventsId",
+        "type": "ref",
+        "restrictCollection": "publicEvents"
+    },
+    {
+        "_id": "_predicate",
+        "name": "notificationFromRoom/joinRoomId",
+        "type": "ref",
+        "restrictCollection": "joinRoom"
+    },
+    {
+        "_id": "_predicate",
+        "name": "emailSubscribe/from",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "joinRoom/roomId",
+        "type": "ref",
+        "restrictCollection": "room"
+    },
+    {
+        "_id": "_predicate",
+        "name": "joinRoom/notifications",
+        "type": "boolean"
+    },
+    {
+        "_id": "_predicate",
+        "name": "joinRoom/userId",
+        "type": "ref",
+        "restrictCollection": "users"
+    },
+    {
+        "_id": "_predicate",
+        "name": "joinRoom/date",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "room/owner",
+        "type": "ref",
+        "restrictCollection": "users"
+    },
+    {
+        "_id": "_predicate",
+        "name": "room/name",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "room/dateCreation",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "room/color",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "room/image",
+        "type": "bytes"
+    },
+    {
+        "_id": "_predicate",
+        "name": "room/joinedUsers",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "joinRoom"
+    },
+    {
+        "_id": "_predicate",
+        "name": "room/privateEventsId",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "privateEvents"
+    },
+    {
+        "_id": "_predicate",
+        "name": "room/publicEventsId",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "publicEvents"
+    },
+    {
+        "_id": "_predicate",
+        "name": "commentsIconActivites/type",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "commentsIconActivites/from",
+        "type": "ref",
+        "restrictCollection": "users"
+    },
+    {
+        "_id": "_predicate",
+        "name": "commentsIconActivites/date",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "commentsIconActivites/privateEventsId",
+        "type": "ref",
+        "restrictCollection": "privateEvents"
+    },
+    {
+        "_id": "_predicate",
+        "name": "commentsIconActivites/publicEventsId",
+        "type": "ref",
+        "restrictCollection": "publicEvents"
+    },
+    {
+        "_id": "_predicate",
+        "name": "commentsIconActivites/commentId",
+        "type": "ref",
+        "restrictCollection": "comments"
+    },
+    {
+        "_id": "_predicate",
+        "name": "comments/comment",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "comments/privateEventsId",
+        "type": "ref",
+        "restrictCollection": "privateEvents"
+    },
+    {
+        "_id": "_predicate",
+        "name": "comments/publicEventsId",
+        "type": "ref",
+        "restrictCollection": "publicEvents"
+    },
+    {
+        "_id": "_predicate",
+        "name": "comments/from",
+        "type": "ref",
+        "restrictCollection": "users"
+    },
+    {
+        "_id": "_predicate",
+        "name": "comments/reply",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "comments"
+    },
+    {
+        "_id": "_predicate",
+        "name": "comments/date",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "comments/smile",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "commentsIconActivites"
+    },
+    {
+        "_id": "_predicate",
+        "name": "comments/angry",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "commentsIconActivites"
+    },
+    {
+        "_id": "_predicate",
+        "name": "comments/star",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "commentsIconActivites"
+    },
+    {
+        "_id": "_predicate",
+        "name": "comments/wink",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "commentsIconActivites"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/nickName",
+        "unique": true,
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/isBot",
+        "type": "boolean",
+        "index": true
+
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/seedPhrase",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/bty",
+        "type": "double"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/bet",
+        "type": "double"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/expertReputPoins",
+        "type": "int"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/hostReputPoins",
+        "type": "int"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/playerReputPoins",
+        "type": "int"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/advisorReputPoins",
+        "type": "int"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/lastUpdate",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/registered",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/email",
+        "type": "string",
+        "unique": true
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/wallet",
+        "type": "string",
+        "unique": true
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/avatar",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/verifier",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/verifierId",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/publicActivites",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "publicActivites"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/privateActivites",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "privateActivites"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/historyTransactions",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "historyTransactions"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/friends",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "users"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/hostPublicEvents",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "publicEvents"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/hostPrivateEvents",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "privateEvents"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/publicAccount",
+        "type": "boolean"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/publicEmail",
+        "type": "boolean"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/publicWallet",
+        "type": "boolean"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/joinedRooms",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "joinRoom"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/linkedAccounts",
+        "type": "string",
+        "multi": true
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/notificationFromRoom",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "notificationFromRoom"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/invited",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "users"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/invitedBy",
+        "type": "ref",
+        "restrictCollection": "users"
+    },
+    {
+        "_id": "_predicate",
+        "name": "users/minted",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "mint"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicActivites/eventId",
+        "type": "ref",
+        "restrictCollection": "publicEvents"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicActivites/transactionHash",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicActivites/date",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicActivites/role",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicActivites/answer",
+        "type": "int"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicActivites/expertReput",
+        "type": "int"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicActivites/currencyType",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicActivites/amount",
+        "type": "double"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicActivites/mintedToken",
+        "type": "double"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicActivites/payToken",
+        "type": "double"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicActivites/premiumToken",
+        "type": "double"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicActivites/from",
+        "type": "ref",
+        "restrictCollection": "users"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicActivites/refAmount1",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicActivites/refAmount2",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicActivites/refAmount3",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateActivites/from",
+        "type": "ref",
+        "restrictCollection": "users"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateActivites/transactionHash",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateActivites/answer",
+        "type": "int"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateActivites/date",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateActivites/eventId",
+        "type": "ref",
+        "restrictCollection": "privateEvents"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateActivites/role",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "historyTransactions/date",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "historyTransactions/paymentWay",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "historyTransactions/currencyType",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "historyTransactions/amount",
+        "type": "double"
+    },
+    {
+        "_id": "_predicate",
+        "name": "historyTransactions/role",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "historyTransactions/eventId",
+        "type": "ref",
+        "restrictCollection": "publicEvents"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/status",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/host",
+        "type": "ref",
+        "restrictCollection": "users"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/finishTime",
+        "type": "instant",
+        "index": true
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/question",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/answers",
+        "type": "string",
+        "multi": true
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/dateCreation",
+        "type": "instant",
+        "index": true
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/startTime",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/eventEnd",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/endTime",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/validatorsAmount",
+        "type": "int"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/currencyType",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/validated",
+        "type": "int"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/finalAnswer",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/finalAnswerNumber",
+        "type": "int"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/transactionHash",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/resolutionDetalis",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/parcipiantsAnswer",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "publicActivites"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/mintedTokens",
+        "type": "double"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/premium",
+        "type": "boolean"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/premiumTokens",
+        "type": "double"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/mintedHostAmount",
+        "type": "double"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/payHostAmount",
+        "type": "double"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/mintedAdvisorAmount",
+        "type": "double"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/payAdvisorAmount",
+        "type": "double"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/validatorsAnswer",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "publicActivites"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/hashtags",
+        "type": "string",
+        "multi": true
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/thumImage",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/thumFinish",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/thumColor",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "publicEvents/room",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "room"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/question",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/thumImage",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/thumColor",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/thumFinish",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/answers",
+        "type": "string",
+        "multi": true
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/resolutionDetalis",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/startTime",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/endTime",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/dateCreation",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/winner",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/loser",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/finalAnswer",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/finalAnswerNumber",
+        "type": "int"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/transactionHash",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/parcipiantsAnswer",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "privateActivites"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/validatorAnswer",
+        "type": "ref",
+        "restrictCollection": "privateActivites"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/status",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/host",
+        "type": "ref",
+        "restrictCollection": "users"
+    },
+    {
+        "_id": "_predicate",
+        "name": "privateEvents/room",
+        "type": "ref",
+        "multi": true,
+        "restrictCollection": "room"
+    },
+    {
+        "_id": "_predicate",
+        "name": "hashtags/hashtags",
+        "type": "string",
+        "multi": true
+    },
+    {
+        "_id": "_predicate",
+        "name": "withdrawal/userId",
+        "type": "ref",
+        "restrictCollection": "users"
+    },
+    {
+        "_id": "_predicate",
+        "name": "withdrawal/date",
+        "type": "instant"
+    },
+    {
+        "_id": "_predicate",
+        "name": "withdrawal/transactionHash",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "withdrawal/status",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "withdrawal/amount",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "mint/amount",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "mint/purpose",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "mint/tx",
+        "type": "string"
+    },
+    {
+        "_id": "_predicate",
+        "name": "mint/user",
+        "type": "ref",
+        "restrictCollection": "users"
+    },
+    {
+        "_id": "_predicate",
+        "name": "mint/date",
+        "type": "instant"
+    }
+]
