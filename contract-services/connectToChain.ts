@@ -10,7 +10,7 @@ import { demonAPI } from "../config/path";
 import "dotenv/config";
 
 const types = [
-  ["/VoroshilovMax.bettery.funds.MsgCreateMintBet", MsgCreateMintBet],
+  ["/bettery.funds.v1.MsgCreateMintBet", MsgCreateMintBet],
   [
     "/VoroshilovMax.bettery.publicevents.MsgCreateFihishPubEvent",
     MsgCreateFihishPubEvent,
