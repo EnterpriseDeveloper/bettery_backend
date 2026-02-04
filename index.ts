@@ -44,6 +44,8 @@ app.use(
     origin: "*",
   }),
 );
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.text({ limit: "50mb" }));
 app.use(

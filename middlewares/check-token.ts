@@ -38,6 +38,7 @@ export default async (req: any, res: any, next: any) => {
       return next(res.send("not valid token"));
     }
     fromRedis.key = data;
+    req.body = req.body ?? {};
     req.body.dataFromRedis = fromRedis;
     next();
   } catch (e: any) {

@@ -25,7 +25,7 @@ services:
       retries: 10
 
   app:
-    restart: on-failure
+    restart: unless-stopped
     build:
       context: .
       dockerfile: ./Dockerfile
